@@ -1,0 +1,22 @@
+
+<%- include('../header.ejs') %>
+<h2>Cập nhật nhóm sản phẩm</h2>
+<form action="/action_page.php">
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Tên nhóm:</label>
+      <input type="text" class="form-control" value="<%= cat.name %>" id="" placeholder="Enter name" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Thứ tự:</label>
+      <input type="text" class="form-control" value="<%= cat.ord %>" id="" placeholder="Enter ord" name="ord">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="status" <%=cat.status==1?'selected':'' %>> Hiển thị
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Ghi lại</button>
+    <a href="/cate" class="btn btn-primary">Trở lại</a>
+  </form>
+
+  <%- include('../footer.ejs') %>

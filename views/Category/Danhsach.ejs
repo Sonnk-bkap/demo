@@ -1,0 +1,31 @@
+<%- include('../header.ejs') %>
+
+<div class="container mt-3">
+    <h2>DANH SÁCH NHÓM SẢN PHẨM</h2>
+    <a href="/cate/them" class="btn btn-primary">Thêm mới</a>          
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Tên nhóm</th>
+          <th>Thứ tư</th>
+          <th>Trạng thái</th>
+          <th>Chức năng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% cat.forEach(item=>{ %>
+        <tr>
+          <td><%=item.name %></td>
+          <td><%=item.ord %></td>
+          <td><%=item.status %></td>
+          <td>
+            <a href="/cate/edit/<%=item.Id %>" class="btn btn-info">Sửa</a>          
+            <a href="/cate/delete/<%=item.Id %>" class="btn btn-danger">Xóa</a>          
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+<%- include('../footer.ejs') %>
